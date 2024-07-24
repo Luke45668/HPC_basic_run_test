@@ -38,7 +38,7 @@
 #  module load mpi/intel/2019/update6/intel 
 #  module load hdf/5-1.12.3-impi/intel-2022
  
- mpirun -np 8 home/*INSERT_UCL_NAME*/HPC_BASIC_RUN_TEST/lammps-2Aug2023/src/test_build/lmp  -in  home/*INSERT_UCL_NAME*/HPC_BASIC_RUN_TEST/in.srd.mixture
+ mpirun -np 8 home/*INSERT_UCL_NAME*/HPC_basic_run_test/lammps-2Aug2023/src/test_build/lmp  -in  home/*INSERT_UCL_NAME*/HPC_basic_run_test/in.srd.mixture
  
  wait
  
