@@ -8,13 +8,13 @@
 #$ -P Gold 
 #$ -A hpc.13
  
-# Request ten minutes of wallclock time (format hours:minutes:seconds).
+# Request wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=01:00:00
  
 # Request 1 gigabyte of RAM (must be an integer followed by M G or T)
 #$ -l mem=1G
  
-# Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
+# Request N gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
 #$ -l tmpfs=1G
  
 # Set up the job array.  In this instance we have requested 10000 tasks
@@ -22,7 +22,7 @@
 #$ 
  
 # Select the MPI parallel environment and 36 processes.
-#$ -pe mpi 8
+#$ -pe mpi 4
  
 #$ -wd /home/*INSERT_UCL_USERNAME*/Scratch/
  
@@ -38,7 +38,7 @@
  module load mpi/intel/2019/update6/intel 
 
  
- mpirun -np 8 home/*INSERT_UCL_USERNAME*/HPC_basic_run_test/lammps-2Aug2023/src/test_build/lmp  -in  home/*INSERT_UCL_USERNAME*/HPC_basic_run_test/in.srd.mixture
+ mpirun -np 4 home/*INSERT_UCL_USERNAME*/HPC_basic_run_test/lammps-2Aug2023/src/test_build/lmp  -in  home/*INSERT_UCL_USERNAME*/HPC_basic_run_test/in.srd.mixture
  
  wait
  

@@ -96,7 +96,7 @@ thermo_style	custom step temp f_2[7] etotal v_pebig v_ebig press &
 thermo_modify	temp tbig
 thermo		100
 
-dump		1 all custom 250 srd_mix_test.dump id type x y z vx vy vz
+dump		1 all custom 50 srd_mix_test.dump id type x y vx vy
 
 
-run		5000
+run		50000
