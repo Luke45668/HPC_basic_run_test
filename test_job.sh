@@ -17,13 +17,6 @@
 # Request N gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
 #$ -l tmpfs=1G
  
-# Set up the job array.  In this instance we have requested 10000 tasks
-# numbered 1 to 10000.
-#$ 
- 
-# Select the MPI parallel environment and 36 processes.
-#$ -pe mpi 4
- 
 #$ -wd /home/*INSERT_UCL_USERNAME*/Scratch/
  
  
@@ -31,15 +24,11 @@
  
  start=$(date +%s)
  
- module unload mpi compilers gcc-libs 
- module load beta-modules 
- module load gcc-libs/10.2.0 
- module load compilers/intel/2022.2 
- module load mpi/intel/2019/update6/intel 
+ 
+ 
+ /home/*INSERT_UCL_USERNAME*/HPC_basic_run_test/lammps-2Aug2023/test_build/lmp  -in  /home/*INSERT_UCL_USERNAME*/HPC_basic_run_test/in.srd.mixture
 
- 
- mpirun -np 4 home/*INSERT_UCL_USERNAME*/HPC_basic_run_test/lammps-2Aug2023/test_build/lmp  -in  home/*INSERT_UCL_USERNAME*/HPC_basic_run_test/in.srd.mixture
- 
+
  wait
  
  sleep 30s
