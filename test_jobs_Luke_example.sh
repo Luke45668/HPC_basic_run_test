@@ -1,7 +1,7 @@
 #!/bin/bash -l
  
-#$ -N *INSERT_JOB_NAME*
-#$ -M *INSERT_EMAIL*
+#$ -N python_hello
+#$ -M luke.debono.21@ucl.ac.uk
 # a = abort b = running e = finished
 #$ -m abe
  
@@ -15,7 +15,7 @@
 # Request N gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
 #$ -l tmpfs=1G
  
-#$ -wd /home/*INSERT_UCL_USERNAME*/Scratch/
+#$ -wd /home/ucahlrl/Scratch/
  
  
  echo "STARTING MYRIAD JOB"
@@ -24,7 +24,7 @@
  
  module load python3 
  
- python3 /home/*INSERT_UCL_USERNAME*/HPC_basic_run_test/helloworld.py
+ python3 /home/ucahlrl/HPC_basic_run_test/helloworld.py
 
 
  wait
